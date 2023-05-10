@@ -47,7 +47,7 @@ GUI1:
     
     Gui, Add, Button, Default Center w380 h30 x10 y164 gExecuteSubmit, Speak
 
-    Gui, Add, Text, w380 h24 x10 y200, Hotkey Configuration (ALT, SHIFT, and/or CTRL plus Key)
+    Gui, Add, Text, w380 h24 x10 y200, Hotkey Configuration Key
     Gui, Add, Hotkey, vKeyCombo x10 y224 w240 h24 Limit1, Reee
     Gui, Add, Button, w130 h24 x260 y224 gSetupKey, Set Key Combo
       
@@ -100,6 +100,7 @@ Speak(AudioOutput, AudioVoice, AudioText, AudioRate, AudioVolume, AudioPitch) {
 
 ExecuteHotkey:
     Gosub, InitGUI2
+    Hotkey, %KeyCombo%, Off
 	inputText:=""
 	Loop
 	{
@@ -137,6 +138,7 @@ ExecuteHotkey:
             , AudioPitch)
     }
     Gosub, CloseGUI2
+    Hotkey, %KeyCombo%, ExecuteHotkey, On
 Return
 
 InitGUI2:
