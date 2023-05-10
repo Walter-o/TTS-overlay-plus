@@ -48,7 +48,7 @@ GUI1:
     Gui, Add, Button, Default Center w380 h30 x10 y164 gExecuteSubmit, Speak
 
     Gui, Add, Text, w380 h24 x10 y200, Hotkey Configuration Key
-    Gui, Add, Hotkey, vKeyCombo x10 y224 w240 h24 Limit1, Reee
+    Gui, Add, Hotkey, vKeyCombo x10 y224 w240 h24
     Gui, Add, Button, w130 h24 x260 y224 gSetupKey, Set Key Combo
       
     Gui, Add, StatusBar, , Ready
