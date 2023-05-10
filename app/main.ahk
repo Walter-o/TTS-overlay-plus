@@ -112,14 +112,19 @@ ExecuteHotkey:
         else if EL = EndKey:BackSpace
         {
 			inputText:=SubStr(inputText, 1, StrLen(inputText)-1)
+            GuiControl, 2:    , HotkeyText, %inputText%_
         }
         else if EL = EndKey:Escape
         {
             inputText:=""
             break
         }
-		inputText.=in
-        GuiControl, 2:    , HotkeyText, %inputText%_
+        else
+        {
+            inputText.=in
+            GuiControl, 2:    , HotkeyText, %inputText%_
+        }
+        Sleep, 1
 	}
 	
 	If (inputText != "") {
