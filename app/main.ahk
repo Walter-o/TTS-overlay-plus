@@ -112,6 +112,10 @@ ExecuteHotkey:
         }
         else if EL = EndKey:BackSpace
         {
+            if StrLen(inputText) = 0
+            {
+                break
+            }
 			inputText:=SubStr(inputText, 1, StrLen(inputText)-1)
             GuiControl, 2:    , HotkeyText, %inputText%_
         }
